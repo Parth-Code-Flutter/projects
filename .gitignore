@@ -1,0 +1,7 @@
+node_modules
+dist
+.npm-cache
+.ref
+.DS_Store
+._*
+*.log
