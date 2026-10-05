@@ -2,7 +2,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowDown, Mail, MapPin } from 'lucide-react'
 import { profile, projects, stats } from '../data'
 import { asset } from './Gallery'
-import { Count, GithubIcon, LinkedinIcon } from './Shared'
+import { Count, GithubIcon } from './Shared'
 
 const shot = (id, index) => projects.find((p) => p.id === id).shots[index]
 
@@ -60,9 +60,6 @@ export default function Hero() {
             <span className="hero-socials">
               <a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub">
                 <GithubIcon />
-              </a>
-              <a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
-                <LinkedinIcon />
               </a>
             </span>
           </motion.div>

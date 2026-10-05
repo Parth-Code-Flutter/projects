@@ -3,7 +3,6 @@
 Work-only portfolio: apps I've built and shipped, with who they were for, what they do and what I built.
 
 Live: https://parth-code-flutter.github.io/projects/
-Full portfolio: https://parth-code-flutter.github.io/portfolio/
 
 Built with React, Vite and Framer Motion. All content lives in `src/data.js`.
 

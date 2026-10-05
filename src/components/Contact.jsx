@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { ArrowUpRight, Check, Copy, Download, Mail, Phone } from 'lucide-react'
+import { Check, Copy, Mail, Phone } from 'lucide-react'
 import { profile } from '../data'
-import { GithubIcon, LinkedinIcon, Reveal } from './Shared'
+import { GithubIcon, Reveal } from './Shared'
 
 export default function Contact() {
   const [copied, setCopied] = useState(false)
@@ -52,20 +52,11 @@ export default function Contact() {
             <a className="btn btn--ghost" href={`tel:${profile.phone}`}>
               <Phone size={17} /> {profile.phoneDisplay}
             </a>
-            <a className="btn btn--ghost" href={profile.resume} target="_blank" rel="noreferrer">
-              <Download size={17} /> Resume
-            </a>
           </div>
 
           <div className="contact-socials">
-            <a href={profile.linkedin} target="_blank" rel="noreferrer">
-              <LinkedinIcon /> LinkedIn
-            </a>
             <a href={profile.github} target="_blank" rel="noreferrer">
               <GithubIcon /> GitHub
-            </a>
-            <a href={profile.portfolio} target="_blank" rel="noreferrer">
-              Full portfolio <ArrowUpRight size={16} />
             </a>
           </div>
         </div>

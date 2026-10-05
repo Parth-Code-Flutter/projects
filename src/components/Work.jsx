@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import {
   Apple,
   ArrowUpRight,
+  Briefcase,
   Building2,
   Check,
   ClipboardCheck,
@@ -22,7 +23,7 @@ const storeIcon = { apple: Apple, play: Play }
 const glyphs = { inspect: ClipboardCheck, live: Radio, shop: ShoppingBag, org: Users }
 const pad = (n) => String(n).padStart(2, '0')
 
-function CaseHeader({ project, number, total }) {
+function CaseHeader({ project, number, total, showIcon = true }) {
   const category = categories.find((c) => c.id === project.category)
   const ClientIcon = project.client.includes('Government') ? Landmark : Building2
   return (
@@ -37,7 +38,7 @@ function CaseHeader({ project, number, total }) {
         <span className="case-sector">{project.sector}</span>
       </p>
       <div className="case-heading">
-        {project.icon && <img className="case-icon" src={asset(project.icon)} alt="" width="56" height="56" />}
+        {showIcon && project.icon && <img className="case-icon" src={asset(project.icon)} alt="" width="56" height="56" />}
         <div>
           <h3 className="case-title">{project.title}</h3>
           <p className="case-client">
@@ -131,22 +132,26 @@ function FeaturedCase({ project, number, total, flip }) {
   )
 }
 
-function PrivateCase({ project, number, total }) {
+function CompactCase({ project, number, total }) {
   const { metric, summary, built, tech, accent } = project
   const Glyph = glyphs[project.glyph] ?? Building2
   return (
     <motion.article layout className="pcase" style={{ '--a1': accent[0], '--a2': accent[1] }} {...enter}>
       <div className="pcase-top">
-        <span className="pcase-glyph">
-          <Glyph size={22} strokeWidth={1.7} />
-        </span>
+        {project.icon ? (
+          <img className="pcase-icon" src={asset(project.icon)} alt="" width="52" height="52" />
+        ) : (
+          <span className="pcase-glyph">
+            <Glyph size={22} strokeWidth={1.7} />
+          </span>
+        )}
         <div className="pcase-metric">
           <strong>{metric.value}</strong>
           <span>{metric.label}</span>
         </div>
       </div>
 
-      <CaseHeader project={project} number={number} total={total} />
+      <CaseHeader project={project} number={number} total={total} showIcon={false} />
       <p className="case-summary">{summary}</p>
 
       <ul className="case-built">
@@ -182,7 +187,7 @@ export default function Work() {
   const [filter, setFilter] = useState('all')
   const list = filter === 'all' ? projects : projects.filter((p) => p.category === filter)
   const featured = list.filter((p) => p.shots?.length)
-  const confidential = list.filter((p) => !p.shots?.length)
+  const compact = list.filter((p) => !p.shots?.length)
 
   return (
     <section className="section" id="work">
@@ -222,18 +227,18 @@ export default function Work() {
         </AnimatePresence>
       </div>
 
-      {confidential.length > 0 && (
+      {compact.length > 0 && (
         <>
           <div className="private-head">
             <h3>
-              <Lock size={20} /> Private client work
+              <Briefcase size={20} /> More client work
             </h3>
-            <p>Screens and store listings for these apps are confidential, so here's what I built instead.</p>
+            <p>Most of these are private client apps, so instead of screenshots here's exactly what I built.</p>
           </div>
           <div className="pcases">
             <AnimatePresence mode="popLayout">
-              {confidential.map((p, i) => (
-                <PrivateCase key={p.id} project={p} number={featured.length + i + 1} total={list.length} />
+              {compact.map((p, i) => (
+                <CompactCase key={p.id} project={p} number={featured.length + i + 1} total={list.length} />
               ))}
             </AnimatePresence>
           </div>

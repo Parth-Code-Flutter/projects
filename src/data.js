@@ -5,10 +5,7 @@ export const profile = {
   email: 'parthmapar009@gmail.com',
   phone: '+917048321663',
   phoneDisplay: '+91 70483 21663',
-  linkedin: 'https://www.linkedin.com/in/parth-mandavia-437a03156/',
   github: 'https://github.com/Parth-Code-Flutter',
-  portfolio: 'https://parth-code-flutter.github.io/portfolio/',
-  resume: 'https://drive.google.com/file/d/1Bj791xA7SL8livHe6CXcBVHtIxn0TdIu/view?usp=sharing',
 }
 
 export const navLinks = [
@@ -29,7 +26,7 @@ export const stats = [
   { value: 5, suffix: '+', label: 'Years building with Flutter' },
 ]
 
-export const sectors = ['Government', 'Utilities', 'Inspections & GIS', 'Social & Live Streaming', 'E-commerce', 'Agritech', 'HR & Teams', 'Payments']
+export const sectors = ['Government', 'Utilities', 'Inspections & GIS', 'Social & Live Streaming', 'E-commerce', 'Agritech', 'Community', 'HR & Teams', 'Payments']
 
 export const projects = [
   {
@@ -62,15 +59,43 @@ export const projects = [
     accent: ['#36d1dc', '#5b86e5'],
   },
   {
+    id: 'qobo1live',
+    category: 'flutter',
+    title: 'Qobo1live',
+    client: 'Live streaming & social startup',
+    sector: 'Live streaming & social',
+    metric: { value: 'NEW', label: 'Launched on Google Play · 2026' },
+    summary:
+      'A live social app where people go live, join voice and video rooms, battle other hosts in PK matches and meet new people through calls and chat.',
+    built: [
+      'Live streams, group voice / video rooms and timed PK battles between hosts, powered by ZegoCloud.',
+      '1:1 voice and video calls with native incoming-call screens and screenshot protection during calls.',
+      'Realtime gifting, chat and notifications over Socket.IO and Firebase, with animated SVGA gift effects.',
+      'Coin wallet with Razorpay top-ups, virtual mall, backpack items, medals, families and daily task rankings.',
+      'Google & Facebook sign-in, and Play release work including Android 16 KB page-size compliance.',
+    ],
+    tech: ['Flutter', 'Dart', 'GetX', 'ZegoCloud', 'Socket.IO', 'Firebase', 'Razorpay', 'CallKit'],
+    platforms: ['Android'],
+    links: [{ label: 'Google Play', store: 'play', href: 'https://play.google.com/store/apps/details?id=com.qobo1live.live' }],
+    icon: 'apps/qobo-icon.webp',
+    shots: [
+      { src: 'apps/qobo-family.webp', alt: 'Qobo1live family circle screen with members and rankings' },
+      { src: 'apps/qobo-live.webp', alt: 'Qobo1live home with live rooms and a live stream in progress' },
+      { src: 'apps/qobo-chat.webp', alt: 'Qobo1live group chat with gifts' },
+    ],
+    accent: ['#ff4fa3', '#8b5cf6'],
+  },
+  {
     id: 'smart-inspection',
     category: 'flutter',
     title: 'Smart Inspection',
     client: 'Government of Ras Al Khaimah, UAE',
     sector: 'Government inspections',
-    metric: { value: '3', label: 'Government departments' },
+    metric: { value: '3', label: 'PHSD · Urban · Land (RERA)' },
     summary:
-      'Field inspection platform used by inspectors across three government departments, built to keep working without a network connection.',
+      'Field inspection platform used by inspectors across three government departments — PHSD, Urban and Land (RERA) — built to keep working without a network connection.',
     built: [
+      'One app handling three departments — PHSD, Urban and Land (RERA) — each with its own inspection types, checklists and rules.',
       'Dynamic, department-specific checklists with violation recording and photo evidence capture.',
       'Offline-first storage with Isar: inspections are cached, submissions queued and synced to REST APIs when back online.',
       'ArcGIS patrolling — map markers, boundary selection and location-based inspections.',
@@ -173,6 +198,27 @@ export const projects = [
     glyph: 'org',
     accent: ['#f7971e', '#ffd200'],
   },
+  {
+    id: 'yuvasangh',
+    category: 'flutter',
+    title: 'Yuvasangh',
+    client: 'All-India community organisation',
+    sector: 'Community & membership',
+    metric: { value: '1K+', label: 'Downloads · 5.0★ rating' },
+    summary:
+      'A member directory for a large community organisation — members and volunteers find each other, follow their committees and get updates from admins.',
+    built: [
+      'Searchable member and volunteer directory with filters for layer, designation, committee, region, local samaj and council.',
+      'Committee information so members know who is responsible for what.',
+      'Admin broadcast messages to keep every committee up to date.',
+      'Downloads section for shared documents and circulars.',
+    ],
+    tech: ['Flutter', 'Dart', 'REST APIs', 'Search & filters'],
+    platforms: ['Android'],
+    links: [{ label: 'Google Play', store: 'play', href: 'https://play.google.com/store/apps/details?id=com.yuvasangh.yuvasangh' }],
+    icon: 'apps/yuva-icon.webp',
+    accent: ['#3b6cf6', '#f7971e'],
+  },
 ]
 
 export const experience = [
@@ -182,7 +228,7 @@ export const experience = [
     mode: 'Remote',
     focus: 'Government inspection apps · UAE',
     points: [
-      'Flutter inspection workflows for three government departments: dynamic checklists, violations and evidence capture.',
+      'Flutter inspection workflows for three government departments (PHSD, Urban and Land / RERA): dynamic checklists, violations and evidence capture.',
       'Offline-first sync with Isar, ArcGIS patrolling, build flavors and Android / iOS releases.',
     ],
   },
@@ -254,7 +300,6 @@ export const skills = [
 const gh = (repo) => `https://github.com/Parth-Code-Flutter/${repo}`
 
 export const builds = [
-  { name: 'qobo_1_live', desc: 'Audio streaming, chat and a vertical video feed.', tags: ['Streaming', 'Chat'], href: gh('qobo_1_live') },
   { name: 'invoice_generator', desc: 'Create and export invoices and business documents.', tags: ['PDF', 'Business'], href: gh('invoice_generator') },
   { name: 'doctors_clinic', desc: 'Appointment and clinic workflows for healthcare.', tags: ['Healthcare', 'UI'], href: gh('doctors_clinic') },
   { name: 'sip_reminder', desc: 'Reminders and tracking for investment plans.', tags: ['Finance', 'Reminders'], href: gh('sip_reminder') },

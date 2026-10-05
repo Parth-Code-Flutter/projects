@@ -1105,6 +1105,19 @@ svg {
   box-shadow: 0 12px 30px -12px var(--a2);
 }
 
+.pcase-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #fff;
+  object-fit: cover;
+  box-shadow: 0 12px 30px -12px var(--a1);
+}
+
+.pcase:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
 .pcase-metric {
   text-align: right;
 }
@@ -1324,7 +1337,7 @@ svg {
 
 .builds {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 14px;
 }
 
@@ -1570,10 +1583,6 @@ svg {
 
   .skill:last-child {
     grid-column: span 2;
-  }
-
-  .builds {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 

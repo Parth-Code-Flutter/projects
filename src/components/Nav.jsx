@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { ArrowUpRight, Menu, X } from 'lucide-react'
-import { navLinks, profile } from '../data'
+import { ArrowRight, Menu, X } from 'lucide-react'
+import { navLinks } from '../data'
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
@@ -53,8 +53,8 @@ export default function Nav() {
           </li>
         ))}
         <li>
-          <a className="btn btn--outline btn--sm" href={profile.portfolio} target="_blank" rel="noreferrer">
-            Full portfolio <ArrowUpRight size={15} />
+          <a className="btn btn--outline btn--sm" href="#contact" onClick={() => setOpen(false)}>
+            Let's talk <ArrowRight size={15} />
           </a>
         </li>
       </ul>
