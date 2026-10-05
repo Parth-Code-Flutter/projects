@@ -53,7 +53,12 @@ export const projects = [
       { label: 'Google Play', store: 'play', href: 'https://play.google.com/store/apps/details?id=com.diamwaterproject' },
       { label: 'App Store', store: 'apple', href: 'https://apps.apple.com/us/app/nama-water/id1504898635' },
     ],
-    screen: 'water',
+    icon: 'apps/nama-icon.webp',
+    shots: [
+      { src: 'apps/nama-portal.webp', alt: 'Nama Water services portal home screen' },
+      { src: 'apps/nama-dashboard.webp', alt: 'Nama Water account dashboard with credit and consumption chart' },
+      { src: 'apps/nama-leak.webp', alt: 'Nama Water report a water leak screen with map' },
+    ],
     accent: ['#36d1dc', '#5b86e5'],
   },
   {
@@ -74,8 +79,8 @@ export const projects = [
     tech: ['Flutter', 'Dart', 'BLoC', 'GetX', 'Isar', 'ArcGIS', 'REST APIs', 'React.js'],
     platforms: ['Android', 'iOS', 'Web'],
     links: [],
-    note: 'Government project · restricted access',
-    screen: 'inspect',
+    note: 'Client private · government',
+    glyph: 'inspect',
     accent: ['#ff6b6b', '#7c5cff'],
   },
   {
@@ -93,8 +98,9 @@ export const projects = [
     ],
     tech: ['Flutter', 'Dart', 'Firebase', 'Hive', 'Live Streaming', 'Chat'],
     platforms: ['iOS'],
-    links: [{ label: 'App Store', store: 'apple', href: 'https://apps.apple.com/in/app/fivesocialmedia/id1665131358' }],
-    screen: 'live',
+    links: [],
+    note: 'Client private',
+    glyph: 'live',
     accent: ['#c471f5', '#fa71cd'],
   },
   {
@@ -112,10 +118,9 @@ export const projects = [
     ],
     tech: ['Flutter', 'Dart', 'GetX', 'Firebase', 'Hive'],
     platforms: ['Android'],
-    links: [
-      { label: 'Google Play', store: 'play', href: 'https://play.google.com/store/apps/details?id=com.mobylogic.twowaay.consumer.consumerApp' },
-    ],
-    screen: 'shop',
+    links: [],
+    note: 'Client private',
+    glyph: 'shop',
     accent: ['#11998e', '#38ef7d'],
   },
   {
@@ -139,7 +144,12 @@ export const projects = [
       { label: 'Customer App', store: 'play', href: 'https://play.google.com/store/apps/details?id=com.tractorseva.customer' },
       { label: 'Workshop App', store: 'play', href: 'https://play.google.com/store/apps/details?id=com.tractorseva.workshop' },
     ],
-    screen: 'tractor',
+    icon: 'apps/tractor-icon.webp',
+    shots: [
+      { src: 'apps/tractor-workshop.webp', alt: 'Tractor Seva workshop app dashboard with bookings and earnings' },
+      { src: 'apps/tractor-services.webp', alt: 'Tractor Seva customer app home with service offerings' },
+      { src: 'apps/tractor-packages.webp', alt: 'Tractor Seva service packages and kits' },
+    ],
     accent: ['#ff512f', '#f09819'],
   },
   {
@@ -159,8 +169,8 @@ export const projects = [
     tech: ['Flutter', 'Dart', 'GetX', 'Firebase', 'REST APIs'],
     platforms: ['Android', 'iOS'],
     links: [],
-    note: 'Private client app',
-    screen: 'org',
+    note: 'Client private',
+    glyph: 'org',
     accent: ['#f7971e', '#ffd200'],
   },
 ]

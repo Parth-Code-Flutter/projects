@@ -39,11 +39,17 @@ Add an entry to `projects` in `src/data.js`:
   tech: ['Flutter', 'Firebase'],
   platforms: ['Android', 'iOS'],
   links: [{ label: 'Google Play', store: 'play', href: 'https://…' }], // store: 'play' | 'apple'
-  note: 'Private client app',      // optional, shown when there are no public links
-  screen: 'water',                 // phone mockup: water | inspect | live | shop | tractor | org
+  note: 'Client private',          // optional, shown when there are no public links
+  icon: 'apps/my-app-icon.webp',   // optional app icon in public/apps/
+  shots: [                         // optional, up to 3 real screenshots in public/apps/
+    { src: 'apps/my-app-1.webp', alt: 'Home screen' },
+  ],
+  glyph: 'shop',                   // used when there are no shots: inspect | live | shop | org
   accent: ['#36d1dc', '#5b86e5'],  // gradient colours
 }
 ```
+
+Projects with `shots` get a large case study with a screenshot gallery. Projects without screenshots are listed under **Private client work**.
 
 ## Adding React / web work later
 

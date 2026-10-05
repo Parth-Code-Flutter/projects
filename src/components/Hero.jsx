@@ -1,13 +1,15 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowDown, Mail, MapPin } from 'lucide-react'
 import { profile, projects, stats } from '../data'
-import Phone from './Phone'
+import { asset } from './Gallery'
 import { Count, GithubIcon, LinkedinIcon } from './Shared'
 
+const shot = (id, index) => projects.find((p) => p.id === id).shots[index]
+
 const fan = [
-  { id: 'five', className: 'hero-phone hero-phone--left', rotate: -9, delay: 0.35 },
-  { id: 'tractor-seva', className: 'hero-phone hero-phone--right', rotate: 9, delay: 0.45 },
-  { id: 'nama-water', className: 'hero-phone hero-phone--center', rotate: 0, delay: 0.25 },
+  { ...shot('tractor-seva', 1), className: 'hero-shot hero-shot--left', rotate: -8, delay: 0.35 },
+  { ...shot('tractor-seva', 0), className: 'hero-shot hero-shot--right', rotate: 8, delay: 0.45 },
+  { ...shot('nama-water', 1), className: 'hero-shot hero-shot--center', rotate: 0, delay: 0.25 },
 ]
 
 const rise = (delay) => ({
@@ -30,7 +32,7 @@ export default function Hero() {
       <div className="hero-inner">
         <div className="hero-copy">
           <motion.p className="hero-pill" {...rise(0)}>
-            <span className="status-dot" /> {projects.length} featured apps · live on the stores
+            <span className="status-dot" /> Flutter apps in production since 2021
           </motion.p>
 
           <motion.p className="hero-kicker mono" {...rise(0.05)}>
@@ -72,25 +74,22 @@ export default function Hero() {
 
         <div className="hero-visual">
           <div className="hero-ring" aria-hidden="true" />
-          {fan.map(({ id, className, rotate, delay }) => {
-            const p = projects.find((x) => x.id === id)
-            return (
-              <motion.div
-                key={id}
-                className={className}
-                initial={{ opacity: 0, y: 60, rotate: 0 }}
-                animate={{ opacity: 1, y: 0, rotate }}
-                transition={{ duration: 1, delay, ease: [0.22, 1, 0.36, 1] }}
-              >
-                <motion.div
-                  animate={reduce ? undefined : { y: [0, -10, 0] }}
-                  transition={{ duration: 6, delay: delay * 4, repeat: Infinity, ease: 'easeInOut' }}
-                >
-                  <Phone screen={p.screen} accent={p.accent} />
-                </motion.div>
-              </motion.div>
-            )
-          })}
+          {fan.map(({ src, alt, className, rotate, delay }) => (
+            <motion.div
+              key={src}
+              className={className}
+              initial={{ opacity: 0, y: 60, rotate: 0 }}
+              animate={{ opacity: 1, y: 0, rotate }}
+              transition={{ duration: 1, delay, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <motion.img
+                src={asset(src)}
+                alt={alt}
+                animate={reduce ? undefined : { y: [0, -10, 0] }}
+                transition={{ duration: 6, delay: delay * 4, repeat: Infinity, ease: 'easeInOut' }}
+              />
+            </motion.div>
+          ))}
           <motion.span className="hero-badge hero-badge--a" {...rise(0.9)}>
             <b>100K+</b> downloads
           </motion.span>
